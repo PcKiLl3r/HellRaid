@@ -5,5 +5,6 @@
 [node name="GameLevel" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_cvewe")]
-position = Vector2(220, 121)
+position = Vector2(220, 132)
+rotation = -6.28319
 move_speed = 250.0
