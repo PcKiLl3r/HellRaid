@@ -14,7 +14,8 @@ position = Vector2(1, 0)
 rotation = -6.28319
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_l5qk1")
-offset = Vector2(-16, 0)
+offset = Vector2(14, 0)
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sn5j0")
