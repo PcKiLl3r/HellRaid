@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://yw2im1whuipa"]
+
+[ext_resource type="Texture2D" uid="uid://bh1nx1nkg3rpa" path="res://assets/objects/Tree-2.svg" id="1_jdj1t"]
+[ext_resource type="Script" path="res://scenes/resource_objects/IsNearResource.gd" id="2_qtotf"]
+
+[node name="Tree2StaticBody2D" type="StaticBody2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jdj1t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(28, -42, 53, -53, 40, -26, 55, -21, 63, -5, 59, 16, 48, 24, 68, 43, 31, 37, 23, 50, 8, 58, -3, 57, -18, 88, -25, 54, -41, 50, -51, 39, -54, 24, -86, 18, -59, 4, -62, -10, -59, -24, -48, -34, -39, -37, -44, -68, -22, -48, -14, -57, 1, -61, 16, -59, 24, -52)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_qtotf")
+resource_type = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(0, -104, 12.8, -64.8, 28.8, -72.8, 46.4, -72, 60, -64.8, 68.8, -53.6, 72.8, -40.8, 71.2, -26.4, 109.6, -24.8, 68.8, 6.4, 74.4, 24, 71.2, 37.6, 64.8, 50.4, 52.8, 58.4, 68, 104, 28.8, 76.8, 18.4, 86.4, 3.2, 91.2, -11.2, 88.8, -22.4, 82.4, -29.6, 76, -67.2, 104.8, -54.4, 61.6, -67.2, 56, -77.6, 44.8, -82.4, 29.6, -80.8, 14.4, -73.6, 2.4, -110.4, -24.8, -67.2, -24.8, -68.8, -36, -67.2, -48.8, -61.6, -59.2, -51.2, -68, -40, -72.8, -28, -73.6, -18.4, -70.4, -12, -67.2)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

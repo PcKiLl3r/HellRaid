@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://diu3qsuutmchg"]
+
+[ext_resource type="Texture2D" uid="uid://biwsk2avgfqxx" path="res://assets/objects/Stone.svg" id="1_wkfh3"]
+[ext_resource type="Script" path="res://scenes/resource_objects/IsNearResource.gd" id="2_n6fmj"]
+
+[node name="StoneStaticBody2D" type="StaticBody2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wkfh3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-53, -94, 20, -88, 31, -64, 37, -69, 92, -54, 106, 1, 66, 44, 15, 30, 10, 38, 3, 37, -9, 79, -66, 94, -107, 53, -91, -3, -81, -6, -95, -34)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_n6fmj")
+resource_type = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(4, 3)
+scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(-53, -94, 20, -88, 37, -69, 84.8, -53.6, 96.8, 0.8, 52, 46.4, 11.2, 40.8, 3.2, 75.2, -59.2, 93.6, -107.2, 45.6, -88.8, -12.8, -95, -34)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

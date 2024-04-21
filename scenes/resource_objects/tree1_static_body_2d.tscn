@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqo58gr6lmi83"]
+
+[ext_resource type="Texture2D" uid="uid://bdf7tf4hk3oo" path="res://assets/objects/Tree-1.svg" id="1_7aydg"]
+[ext_resource type="Script" path="res://scenes/resource_objects/IsNearResource.gd" id="2_j1cgq"]
+
+[node name="Tree1StaticBody2D" type="StaticBody2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7aydg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, -89, 78, -46, 82, 45, 2, 92, -79, 47, -80, -45)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_j1cgq")
+resource_type = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(-26.4, -101.6, 74.4, -73.6, 101.6, 27.2, 28, 103.2, -73.6, 76, -102.4, -27.2)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

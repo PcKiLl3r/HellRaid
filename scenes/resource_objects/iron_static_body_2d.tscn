@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b11jv044djh5l"]
+
+[ext_resource type="Texture2D" uid="uid://cfkj7nmiegplq" path="res://assets/objects/Iron.svg" id="1_k0sbd"]
+[ext_resource type="Script" path="res://scenes/resource_objects/IsNearResource.gd" id="2_avebv"]
+
+[node name="IronStaticBody2D" type="StaticBody2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k0sbd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(29, -46, 34, -50, 100, -33, 117, 33, 70, 81, 10, 65, 4, 74, -80, 67, -117, -10, -68, -80, 17, -73)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_avebv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(32.8, -55.2, 93.6, -40.8, 113.6, 30.4, 60, 84, 15.2, 72, 6.4, 79.2, -80.8, 71.2, -117, -10, -62.4, -85.6, 20, -77.6)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
