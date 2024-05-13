@@ -1,6 +1,12 @@
 extends CharacterBody2D
 
+class_name Player
+
+signal healthChanged
+
 @export var move_speed : float = 100
+@export var max_health = 100
+@onready var current_health: int = max_health
 
 func _physics_process(_delta):
 	look_at(get_global_mouse_position())
@@ -15,3 +21,9 @@ func _physics_process(_delta):
 
 	#Move and slide function uses velocity of character body to move character
 	move_and_slide()
+
+func hurtByEnemy(area):
+	current_health -= 20
+	if current_health < 0:
+		current_health = max_health
+	healthChanged.emit()
