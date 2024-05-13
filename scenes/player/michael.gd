@@ -10,20 +10,20 @@ signal healthChanged
 
 func _physics_process(_delta):
 	look_at(get_global_mouse_position())
-	# Get input direction
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 	
-	#Update velocity
+	# Update velocity
 	velocity = input_direction * move_speed
 
-	#Move and slide function uses velocity of character body to move character
+	# Move and slide function uses velocity of character body to move character
 	move_and_slide()
 
 func hurtByEnemy(area):
 	current_health -= 20
-	if current_health < 0:
-		current_health = max_health
+	if current_health <= 0:
+		current_health = 0  # Keep health at zero instead of resetting it to max_health
+		# Consider adding a death or reset function here if needed
 	healthChanged.emit()
