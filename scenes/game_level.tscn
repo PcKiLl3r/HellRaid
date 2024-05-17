@@ -1,21 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwd4waph2o2tj"]
+[gd_scene load_steps=14 format=3 uid="uid://dwd4waph2o2tj"]
 
 [ext_resource type="PackedScene" uid="uid://vb6lxvealpgj" path="res://scenes/player/player_character_body_2d.tscn" id="1_cvewe"]
 [ext_resource type="PackedScene" uid="uid://b11jv044djh5l" path="res://scenes/resource_objects/iron_static_body_2d.tscn" id="2_cysen"]
 [ext_resource type="PackedScene" uid="uid://diu3qsuutmchg" path="res://scenes/resource_objects/stone_static_body_2d.tscn" id="3_nuufq"]
 [ext_resource type="PackedScene" uid="uid://cqo58gr6lmi83" path="res://scenes/resource_objects/tree1_static_body_2d.tscn" id="4_417xm"]
 [ext_resource type="PackedScene" uid="uid://yw2im1whuipa" path="res://scenes/resource_objects/tree2_static_body_2d.tscn" id="5_ppx4q"]
-[ext_resource type="PackedScene" uid="uid://c5b68t6kpae0p" path="res://scenes/enemies/enemy_stone_character_body_2d.tscn" id="6_tpmsb"]
 [ext_resource type="Texture2D" uid="uid://beggkjacijl1b" path="res://assets/floor/Ground-Texture.svg" id="7_1duyn"]
 [ext_resource type="Script" path="res://scenes/UserInterface.gd" id="8_n2dp5"]
 [ext_resource type="Script" path="res://scenes/HealthBar.gd" id="8_n7j40"]
 [ext_resource type="PackedScene" uid="uid://b8bucrlk65i1d" path="res://utility/enemy_spawner.tscn" id="10_k5jke"]
-
-[sub_resource type="GDScript" id="GDScript_hrej1"]
-script/source = "extends CharacterBody2D
-
-
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13hjo"]
 texture = ExtResource("7_1duyn")
@@ -228,10 +221,6 @@ position = Vector2(113, 393)
 
 [node name="Tree2StaticBody2D" parent="." instance=ExtResource("5_ppx4q")]
 position = Vector2(287, 497)
-
-[node name="EnemyStoneCharacterBody2D" parent="." instance=ExtResource("6_tpmsb")]
-position = Vector2(646, 354)
-script = SubResource("GDScript_hrej1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(220, 132)
