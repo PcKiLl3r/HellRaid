@@ -8,7 +8,7 @@
 radius = 53.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgf04"]
-size = Vector2(141.5, 282)
+size = Vector2(101.5, 236)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
@@ -31,8 +31,8 @@ rotation = -1.5708
 scale = Vector2(0.407602, 0.263871)
 texture = ExtResource("3_b18ih")
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(133.25, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(113.25, 0)
 shape = SubResource("RectangleShape2D_qgf04")
