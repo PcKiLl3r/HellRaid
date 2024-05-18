@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://vb6lxvealpgj"]
+[gd_scene load_steps=7 format=3 uid="uid://vb6lxvealpgj"]
 
 [ext_resource type="Script" path="res://scenes/player/michael.gd" id="1_dbhc3"]
 [ext_resource type="Texture2D" uid="uid://c1xqrlnsuidkc" path="res://assets/characters/PlayerSprite.svg" id="1_l5qk1"]
@@ -6,6 +6,18 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sn5j0"]
 radius = 53.0
+
+[sub_resource type="GDScript" id="GDScript_wl8xr"]
+script/source = "extends Area2D
+
+@export var damage = 50
+
+func _on_body_entered(body):
+	for child in body.get_children():
+		if child is Damageable:
+			#print(\"Hit for: \" + damage)
+			child.hit(damage)
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgf04"]
 size = Vector2(141.5, 282)
@@ -26,13 +38,21 @@ flip_h = true
 shape = SubResource("CircleShape2D_sn5j0")
 
 [node name="OnHand" type="Sprite2D" parent="."]
-position = Vector2(68, 88)
-rotation = -1.5708
-scale = Vector2(0.407602, 0.263871)
+position = Vector2(68, 86)
+rotation = 4.71239
+scale = Vector2(0.363808, 0.28745)
 texture = ExtResource("3_b18ih")
 
 [node name="AttackArea" type="Area2D" parent="."]
+script = SubResource("GDScript_wl8xr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+visible = false
 position = Vector2(133.25, 1)
 shape = SubResource("RectangleShape2D_qgf04")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

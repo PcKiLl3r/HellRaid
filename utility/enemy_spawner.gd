@@ -7,7 +7,6 @@ extends Node2D
 
 var time = 0
 
-
 func _on_timer_timeout():
 	time += 1
 	var enemy_spawns = spawns
