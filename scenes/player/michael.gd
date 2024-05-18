@@ -32,7 +32,6 @@ func _physics_process(_delta):
 		play_attack_animation()
 		check_attack_area()
 		
-	die()
 	move_and_slide()
 
 func play_attack_animation():
@@ -53,6 +52,7 @@ func hurtByEnemy(area):
 		current_health = 0  # Keep health at zero instead of resetting it to max_health
 		# Consider adding a death or reset function here if needed
 	healthChanged.emit()
+	die()
 	
 
 func check_attack_area():

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/player/michael.gd" id="1_dbhc3"]
 [ext_resource type="Texture2D" uid="uid://c1xqrlnsuidkc" path="res://assets/characters/PlayerSprite.svg" id="1_l5qk1"]
-[ext_resource type="Texture2D" uid="uid://ddaxuxg5aseta" path="res://assets/weapons/axe.svg" id="3_b18ih"]
+[ext_resource type="Texture2D" uid="uid://b62g1nahcpb6c" path="res://assets/weapons/Weapon-4.svg" id="3_cqnm3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sn5j0"]
 radius = 53.0
@@ -20,7 +20,7 @@ func _on_body_entered(body):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgf04"]
-size = Vector2(141.5, 282)
+size = Vector2(161.5, 290)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
@@ -38,17 +38,16 @@ flip_h = true
 shape = SubResource("CircleShape2D_sn5j0")
 
 [node name="OnHand" type="Sprite2D" parent="."]
-position = Vector2(68, 86)
+position = Vector2(58, 76)
 rotation = 4.71239
-scale = Vector2(0.363808, 0.28745)
-texture = ExtResource("3_b18ih")
+scale = Vector2(0.600437, 0.474413)
+texture = ExtResource("3_cqnm3")
 
 [node name="AttackArea" type="Area2D" parent="."]
 script = SubResource("GDScript_wl8xr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-visible = false
-position = Vector2(133.25, 1)
+position = Vector2(143.25, -3)
 shape = SubResource("RectangleShape2D_qgf04")
 
 [node name="CooldownTimer" type="Timer" parent="."]
