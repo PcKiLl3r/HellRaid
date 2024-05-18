@@ -19,6 +19,7 @@ func _physics_process(_delta):
 	velocity = input_direction * move_speed
 
 	# Move and slide function uses velocity of character body to move character
+	die()
 	move_and_slide()
 
 func hurtByEnemy(area):
@@ -27,3 +28,7 @@ func hurtByEnemy(area):
 		current_health = 0  # Keep health at zero instead of resetting it to max_health
 		# Consider adding a death or reset function here if needed
 	healthChanged.emit()
+	
+func die():
+	if current_health <= 0:
+		get_tree().change_scene_to_file("res://utility/game_over.tscn")
