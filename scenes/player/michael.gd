@@ -40,7 +40,7 @@ func play_attack_animation():
 	
 	rotation_degrees = initial_rotation
 	
-	tween.tween_property(self, "rotation_degrees", initial_rotation - 70, 0.1)
+	tween.tween_property(self, "rotation_degrees", initial_rotation - 80, 0.1)
 	tween.tween_property(self, "rotation_degrees", initial_rotation, 0.25)
 	
 func reset_rotation():
@@ -48,6 +48,7 @@ func reset_rotation():
 	
 func hurtByEnemy(area):
 	current_health -= 20
+	print("Health changed")
 	if current_health <= 0:
 		current_health = 0  # Keep health at zero instead of resetting it to max_health
 		# Consider adding a death or reset function here if needed
