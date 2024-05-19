@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b8bucrlk65i1d" path="res://feature/characters/enemies/enemy_spawner.tscn" id="10_k5jke"]
 [ext_resource type="Texture2D" uid="uid://dure1d3vvjbco" path="res://assets/resources/Stone-Resource.svg" id="10_mwuab"]
 [ext_resource type="Texture2D" uid="uid://byvbqp0detdov" path="res://assets/resources/Wood-Resource.svg" id="11_nnn0k"]
-[ext_resource type="PackedScene" path="res://feature/UI/store_ui.tscn" id="13_vev53"]
+[ext_resource type="PackedScene" uid="uid://ccog5dftx0tg4" path="res://feature/UI/store_ui.tscn" id="13_vev53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13hjo"]
 texture = ExtResource("7_1duyn")
