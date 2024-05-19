@@ -97,7 +97,7 @@ func check_attack_area():
 		if body is CharacterBody2D:
 			for child in body.get_children():
 				if child is Damageable:
-					print("Player hit for: " + str(damage))
+					enemy_hit.play()
 					child.hit(damage)
 		# Check if the body is a resource deposit
 		for child in body.get_children():
