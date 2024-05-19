@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://diu3qsuutmchg"]
 
 [ext_resource type="Texture2D" uid="uid://biwsk2avgfqxx" path="res://assets/objects/Stone.svg" id="1_wkfh3"]
-[ext_resource type="Script" path="res://scenes/resource_objects/IsNearResource.gd" id="2_n6fmj"]
+[ext_resource type="Script" path="res://feature/resources/IsNearResource.gd" id="2_n6fmj"]
 
 [node name="StoneStaticBody2D" type="StaticBody2D"]
 scale = Vector2(0.4, 0.4)

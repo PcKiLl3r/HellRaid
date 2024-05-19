@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5b68t6kpae0p"]
 
 [ext_resource type="Texture2D" uid="uid://fr08kdpu05ji" path="res://assets/characters/Enemy-Stone.svg" id="1_0lbpx"]
-[ext_resource type="Script" path="res://scenes/enemies/enemy_stone_character_body_2d.gd" id="1_jwhko"]
-[ext_resource type="Script" path="res://scenes/enemies/EnemyArea2D.gd" id="2_c4xoi"]
-[ext_resource type="Script" path="res://scenes/enemies/Damageable.gd" id="4_wx8mb"]
+[ext_resource type="Script" path="res://feature/characters/enemies/enemy_stone_character_body_2d.gd" id="1_jwhko"]
+[ext_resource type="Script" path="res://feature/characters/enemies/EnemyArea2D.gd" id="2_c4xoi"]
+[ext_resource type="Script" path="res://feature/characters/enemies/Damageable.gd" id="4_wx8mb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iksrm"]
 radius = 56.1427

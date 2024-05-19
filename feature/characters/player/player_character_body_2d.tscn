@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://vb6lxvealpgj"]
 
-[ext_resource type="Script" path="res://scenes/player/michael.gd" id="1_dbhc3"]
+[ext_resource type="Script" path="res://feature/characters/player/michael.gd" id="1_dbhc3"]
 [ext_resource type="Texture2D" uid="uid://c1xqrlnsuidkc" path="res://assets/characters/PlayerSprite.svg" id="1_l5qk1"]
 [ext_resource type="Texture2D" uid="uid://b62g1nahcpb6c" path="res://assets/weapons/Weapon-4.svg" id="3_cqnm3"]
 

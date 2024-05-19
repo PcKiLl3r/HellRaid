@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="HellRaid"
-run/main_scene="res://scenes/game_level.tscn"
+run/main_scene="res://feature/level/game_level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Globals="*res://utility/globals.gd"
+Globals="*res://feature/globals/globals.gd"
 
 [input]
 

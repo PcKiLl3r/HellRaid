@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://csfoc8ed4las8"]
 
-[ext_resource type="Script" path="res://scenes/enemies/wizard_enemy.gd" id="1_yilvq"]
+[ext_resource type="Script" path="res://feature/characters/enemies/wizard/wizard_enemy.gd" id="1_g2wd7"]
 [ext_resource type="Texture2D" uid="uid://dwpbvqyleiftd" path="res://assets/characters/Enemy-Wizard.svg" id="2_quu25"]
-[ext_resource type="Script" path="res://scenes/enemies/attack_area.gd" id="3_vmo3f"]
-[ext_resource type="Script" path="res://scenes/enemies/Damageable.gd" id="4_6sv2s"]
+[ext_resource type="Script" path="res://feature/characters/enemies/attack_area.gd" id="3_102l2"]
+[ext_resource type="Script" path="res://feature/characters/enemies/Damageable.gd" id="4_gvll0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oy4iw"]
 radius = 23.0
@@ -12,7 +12,7 @@ radius = 23.0
 radius = 28.0
 
 [node name="WizardEnemy" type="CharacterBody2D"]
-script = ExtResource("1_yilvq")
+script = ExtResource("1_g2wd7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.38419e-07, -2.38419e-07)
@@ -24,11 +24,11 @@ position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_oy4iw")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_vmo3f")
+script = ExtResource("3_102l2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_xhnq1")
 
 [node name="Damageable" type="Node" parent="."]
-script = ExtResource("4_6sv2s")
+script = ExtResource("4_gvll0")
