@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://drhiliam41x31"]
+
+[ext_resource type="Script" path="res://feature/characters/enemies/wizard/EnemyHealthBar.gd" id="1_8knj7"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8knj7")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 4.0
+offset_bottom = 72.0

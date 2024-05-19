@@ -4,6 +4,7 @@ class_name Player
 
 signal healthChanged
 signal resourcesChanged
+signal coinsChanged
 
 @export var move_speed : float = 100
 @export var max_health = 100
@@ -22,6 +23,8 @@ var resources = {
 	"stone": 0,
 	"wood": 0
 }
+
+var coins: int = 0  # Player's coin count
 
 func _physics_process(_delta):
 	look_at(get_global_mouse_position())
@@ -94,3 +97,9 @@ func add_resource(resource_type: String, amount: int):
 		resources[resource_type] += amount
 		resourcesChanged.emit()
 		print("Added " + str(amount) + " " + resource_type)
+
+# Method to add coins
+func add_coins(amount: int):
+	coins += amount
+	coinsChanged.emit()
+	print("Added " + str(amount) + " coins. Total: " + str(coins))

@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8bucrlk65i1d"]
 
 [ext_resource type="Script" path="res://feature/level/enemy_spawner.gd" id="1_wmeqt"]
-[ext_resource type="PackedScene" uid="uid://c5b68t6kpae0p" path="res://feature/characters/enemies/enemy_stone_character_body_2d.tscn" id="2_qxc0e"]
+[ext_resource type="PackedScene" uid="uid://csfoc8ed4las8" path="res://feature/characters/enemies/wizard/wizard_enemy.tscn" id="2_f1py3"]
 [ext_resource type="Script" path="res://feature/level/spawn_info.gd" id="3_fm0j6"]
 
 [sub_resource type="Resource" id="Resource_e3cdr"]
 script = ExtResource("3_fm0j6")
 time_start = 0
 time_end = 30
-enemy = ExtResource("2_qxc0e")
+enemy = ExtResource("2_f1py3")
 enemy_num = 6
 enemy_spawn_delay = 10
 
@@ -16,7 +16,7 @@ enemy_spawn_delay = 10
 script = ExtResource("3_fm0j6")
 time_start = 30
 time_end = 60
-enemy = ExtResource("2_qxc0e")
+enemy = ExtResource("2_f1py3")
 enemy_num = 1
 enemy_spawn_delay = 5
 
@@ -24,7 +24,7 @@ enemy_spawn_delay = 5
 script = ExtResource("3_fm0j6")
 time_start = 60
 time_end = 120
-enemy = ExtResource("2_qxc0e")
+enemy = ExtResource("2_f1py3")
 enemy_num = 2
 enemy_spawn_delay = 2
 

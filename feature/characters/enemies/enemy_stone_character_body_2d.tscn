@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5b68t6kpae0p"]
+[gd_scene load_steps=8 format=3 uid="uid://c5b68t6kpae0p"]
 
 [ext_resource type="Texture2D" uid="uid://fr08kdpu05ji" path="res://assets/characters/Enemy-Stone.svg" id="1_0lbpx"]
 [ext_resource type="Script" path="res://feature/characters/enemies/enemy_stone_character_body_2d.gd" id="1_jwhko"]
 [ext_resource type="Script" path="res://feature/characters/enemies/EnemyArea2D.gd" id="2_c4xoi"]
 [ext_resource type="Script" path="res://feature/characters/enemies/Damageable.gd" id="4_wx8mb"]
+[ext_resource type="PackedScene" uid="uid://drhiliam41x31" path="res://feature/characters/enemies/health_bar.tscn" id="5_le54j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iksrm"]
 radius = 56.1427
@@ -30,5 +31,7 @@ shape = SubResource("CircleShape2D_b2rei")
 
 [node name="Damageable" type="Node" parent="."]
 script = ExtResource("4_wx8mb")
+
+[node name="HealthBar" parent="." instance=ExtResource("5_le54j")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

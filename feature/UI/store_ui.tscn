@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ccog5dftx0tg4"]
+
+[node name="StoreUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 150.0
+
+[node name="CoinLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Coins: 0"
+
+[node name="SpeedUpgradeButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 204.0
+offset_bottom = 71.0
+text = "+ 1 Speed Upgrade - 10 Coins"
+
+[node name="HealthUpgradeButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 208.0
+offset_bottom = 111.0
+text = "+1 Health Upgrade - 10 Coins"

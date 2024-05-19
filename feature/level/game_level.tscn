@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwd4waph2o2tj"]
+[gd_scene load_steps=19 format=3 uid="uid://dwd4waph2o2tj"]
 
 [ext_resource type="PackedScene" uid="uid://vb6lxvealpgj" path="res://feature/characters/player/player_character_body_2d.tscn" id="1_cvewe"]
 [ext_resource type="PackedScene" uid="uid://b11jv044djh5l" path="res://feature/resources/iron_static_body_2d.tscn" id="2_cysen"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b8bucrlk65i1d" path="res://feature/characters/enemies/enemy_spawner.tscn" id="10_k5jke"]
 [ext_resource type="Texture2D" uid="uid://dure1d3vvjbco" path="res://assets/resources/Stone-Resource.svg" id="10_mwuab"]
 [ext_resource type="Texture2D" uid="uid://byvbqp0detdov" path="res://assets/resources/Wood-Resource.svg" id="11_nnn0k"]
+[ext_resource type="PackedScene" uid="uid://ccog5dftx0tg4" path="res://feature/UI/store_ui.tscn" id="13_vev53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13hjo"]
 texture = ExtResource("7_1duyn")
@@ -323,5 +324,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2DWood" type="Sprite2D" parent="UserInterface/CanvasGroupResources/Node2DWood"]
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("11_nnn0k")
+
+[node name="StoreUI" parent="UserInterface" instance=ExtResource("13_vev53")]
+offset_left = 120.0
+offset_right = 160.0
 
 [node name="EnemySpawner" parent="." instance=ExtResource("10_k5jke")]

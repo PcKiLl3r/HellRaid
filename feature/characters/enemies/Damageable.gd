@@ -4,6 +4,7 @@ class_name Damageable
 
 @export var health: int = 100
 @export var max_health: int = 100
+@export var coins: int = 10  # Number of coins this enemy drops
 
 var health_bar: Control
 
@@ -30,4 +31,10 @@ func hit(damage: int):
 	else:
 		print("Cannot update HealthBar because it's not found.")
 	if health <= 0:
-		get_parent().queue_free()
+		die()
+
+func die():
+	var player = get_node("/root/GameLevel/Player")  # Adjust the path as needed
+	if player:
+		player.add_coins(coins)
+	get_parent().queue_free()
