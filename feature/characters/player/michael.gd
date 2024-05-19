@@ -121,18 +121,17 @@ func add_resource(resource_type: String, amount: int):
 		resources[resource_type] += amount
 		resourcesChanged.emit()
 		print("Added " + str(amount) + " " + resource_type)
-<<<<<<< HEAD
-
-# Method to add coins
-func add_coins(amount: int):
-	coins += amount
-	coinsChanged.emit()
-	print("Added " + str(amount) + " coins. Total: " + str(coins))
-=======
 		if resource_type == "wood":
 			wood_hit.play()
 		elif resource_type == "stone":
 			stone_hit.play()
 		elif resource_type == "iron":
 			iron_hit.play()
->>>>>>> sounds
+			
+# Method to add coins
+func add_coins(amount: int):
+	coins += amount
+	coinsChanged.emit()
+	print("Added " + str(amount) + " coins. Total: " + str(coins))
+
+
