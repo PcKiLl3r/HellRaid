@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://drhiliam41x31"]
 
-[ext_resource type="Script" path="res://feature/characters/enemies/wizard/EnemyHealthBar.gd" id="1_8knj7"]
+[ext_resource type="Script" path="res://feature/characters/enemies/wizard/HealthBar.gd" id="1_8knj7"]
 
 [node name="HealthBar" type="Control"]
 layout_mode = 3

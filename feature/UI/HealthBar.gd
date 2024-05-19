@@ -7,4 +7,4 @@ func _ready():
 	update()  # Initial update to set the progress bar correctly
 
 func update():
-	value = player.current_health * 100 / player.max_health
+	value = player.health * 100 / player.max_health
