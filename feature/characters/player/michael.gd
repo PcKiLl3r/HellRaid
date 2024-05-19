@@ -84,7 +84,6 @@ func hurtByEnemy(_area):
 	healthChanged.emit()
 	die()
 	
-
 func check_attack_area():
 	var overlapping_bodies = attack_area.get_overlapping_bodies()
 	for body in overlapping_bodies:

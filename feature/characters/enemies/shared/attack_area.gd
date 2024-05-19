@@ -2,7 +2,8 @@ extends Area2D
 
 func _ready():
 	# Connect the area_entered signal to a method using a callable
-	connect("area_entered", Callable(self, "_on_body_entered"))
+	
+	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
 	# Check if the entered body is the Player by comparing the group or name

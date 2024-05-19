@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://feature/characters/enemies/wizard/wizard_enemy.gd" id="1_g2wd7"]
 [ext_resource type="Texture2D" uid="uid://dwpbvqyleiftd" path="res://assets/characters/Enemy-Wizard.svg" id="2_quu25"]
-[ext_resource type="Script" path="res://feature/characters/enemies/attack_area.gd" id="3_102l2"]
-[ext_resource type="Script" path="res://feature/characters/enemies/Damageable.gd" id="4_gvll0"]
-[ext_resource type="Script" path="res://feature/characters/enemies/wizard/EnemyHealthBar.gd" id="5_qjvua"]
+[ext_resource type="Script" path="res://feature/characters/enemies/shared/attack_area.gd" id="3_2wh4y"]
+[ext_resource type="Script" path="res://feature/characters/enemies/shared/Damageable.gd" id="4_txppq"]
+[ext_resource type="PackedScene" uid="uid://drhiliam41x31" path="res://feature/characters/enemies/shared/health_bar.tscn" id="5_am8al"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oy4iw"]
 radius = 23.0
@@ -25,24 +25,13 @@ position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_oy4iw")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_102l2")
+script = ExtResource("3_2wh4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_xhnq1")
 
 [node name="Damageable" type="Node" parent="."]
-script = ExtResource("4_gvll0")
+script = ExtResource("4_txppq")
 
-[node name="HealthBar" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("5_qjvua")
-
-[node name="ProgressBar" type="ProgressBar" parent="HealthBar"]
-layout_mode = 0
-offset_top = 45.0
-offset_right = 4.0
-offset_bottom = 72.0
+[node name="HealthBar" parent="." instance=ExtResource("5_am8al")]
