@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwd4waph2o2tj"]
+[gd_scene load_steps=18 format=3 uid="uid://dwd4waph2o2tj"]
 
 [ext_resource type="PackedScene" uid="uid://vb6lxvealpgj" path="res://feature/characters/player/player_character_body_2d.tscn" id="1_cvewe"]
 [ext_resource type="PackedScene" uid="uid://b11jv044djh5l" path="res://feature/resources/iron_static_body_2d.tscn" id="2_cysen"]
@@ -8,7 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://beggkjacijl1b" path="res://assets/floor/Ground-Texture.svg" id="7_1duyn"]
 [ext_resource type="Script" path="res://feature/UI/UserInterface.gd" id="8_n2dp5"]
 [ext_resource type="Script" path="res://feature/UI/HealthBar.gd" id="8_n7j40"]
+[ext_resource type="Script" path="res://feature/level/resource_UI_updater.gd" id="9_8c7mc"]
+[ext_resource type="Texture2D" uid="uid://c5py373hh54ab" path="res://assets/resources/Iron-Resource.svg" id="9_l3l1i"]
 [ext_resource type="PackedScene" uid="uid://b8bucrlk65i1d" path="res://feature/characters/enemies/enemy_spawner.tscn" id="10_k5jke"]
+[ext_resource type="Texture2D" uid="uid://dure1d3vvjbco" path="res://assets/resources/Stone-Resource.svg" id="10_mwuab"]
+[ext_resource type="Texture2D" uid="uid://byvbqp0detdov" path="res://assets/resources/Wood-Resource.svg" id="11_nnn0k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13hjo"]
 texture = ExtResource("7_1duyn")
@@ -269,5 +273,55 @@ text = "Time: 0"
 
 [node name="GameTimer" type="Timer" parent="UserInterface"]
 autostart = true
+
+[node name="CanvasGroupResources" type="Control" parent="UserInterface"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("9_8c7mc")
+
+[node name="Node2DIron" type="Node2D" parent="UserInterface/CanvasGroupResources"]
+position = Vector2(25, 25)
+
+[node name="LabelIron" type="Label" parent="UserInterface/CanvasGroupResources/Node2DIron"]
+offset_left = 25.0
+offset_top = -10.0
+offset_right = 66.0
+offset_bottom = 13.0
+text = "Iron: "
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2DIron" type="Sprite2D" parent="UserInterface/CanvasGroupResources/Node2DIron"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("9_l3l1i")
+
+[node name="Node2DStone" type="Node2D" parent="UserInterface/CanvasGroupResources"]
+position = Vector2(25, 60)
+
+[node name="LabelStone" type="Label" parent="UserInterface/CanvasGroupResources/Node2DStone"]
+offset_left = 25.0
+offset_top = -10.0
+offset_right = 66.0
+offset_bottom = 13.0
+text = "Iron: "
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2DStone" type="Sprite2D" parent="UserInterface/CanvasGroupResources/Node2DStone"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_mwuab")
+
+[node name="Node2DWood" type="Node2D" parent="UserInterface/CanvasGroupResources"]
+position = Vector2(25, 95)
+
+[node name="LabelWood" type="Label" parent="UserInterface/CanvasGroupResources/Node2DWood"]
+offset_left = 25.0
+offset_top = -10.0
+offset_right = 66.0
+offset_bottom = 13.0
+text = "Iron: "
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2DWood" type="Sprite2D" parent="UserInterface/CanvasGroupResources/Node2DWood"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("11_nnn0k")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("10_k5jke")]

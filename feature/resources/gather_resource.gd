@@ -3,10 +3,9 @@ extends Area2D
 # Define the enum within a variable
 enum ResourceType {IRON, STONE, WOOD}
 
-
-
 # Export the enum type for editor selection, accessing the enum via the variable
 @export var resource_type: ResourceType = ResourceType.IRON
+@export var resource_amount: int = 1  # Amount of resource to gather per hit
 
 func _ready():
 	var area = self
@@ -34,3 +33,9 @@ func resource_type_to_string():
 			return "wood"
 		_:
 			return "unknown"
+
+# Method to gather resource
+func gather_resource(player):
+	var resource_name = resource_type_to_string()
+	player.add_resource(resource_name, resource_amount)
+	print("Gathered " + str(resource_amount) + " " + resource_name)

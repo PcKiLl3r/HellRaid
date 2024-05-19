@@ -3,6 +3,7 @@ extends CharacterBody2D
 class_name Player
 
 signal healthChanged
+signal resourcesChanged
 
 @export var move_speed : float = 100
 @export var max_health = 100
@@ -14,6 +15,13 @@ signal healthChanged
 var initial_rotation = 0
 var tween = Tween.new()
 var is_ready: bool = true
+
+# Dictionary to store the player's resources
+var resources = {
+	"iron": 0,
+	"stone": 0,
+	"wood": 0
+}
 
 func _physics_process(_delta):
 	look_at(get_global_mouse_position())
@@ -64,6 +72,11 @@ func check_attack_area():
 				if child is Damageable:
 					#print("Hit for: " + damage)
 					child.hit(damage)
+		# Check if the body is a resource deposit
+		for child in body.get_children():
+			if child.has_method("gather_resource"):
+				child.gather_resource(self)
+				break
 
 func die():
 	if current_health <= 0:
@@ -72,3 +85,11 @@ func die():
 
 func _on_cooldown_timer_timeout():
 	is_ready = true
+
+# Method to add resources to the player's inventory
+func add_resource(resource_type: String, amount: int):
+	print("Gathering resource...")
+	if resource_type in resources:
+		resources[resource_type] += amount
+		resourcesChanged.emit()
+		print("Added " + str(amount) + " " + resource_type)

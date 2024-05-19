@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://csfoc8ed4las8"]
+[gd_scene load_steps=8 format=3 uid="uid://csfoc8ed4las8"]
 
 [ext_resource type="Script" path="res://feature/characters/enemies/wizard/wizard_enemy.gd" id="1_g2wd7"]
 [ext_resource type="Texture2D" uid="uid://dwpbvqyleiftd" path="res://assets/characters/Enemy-Wizard.svg" id="2_quu25"]
 [ext_resource type="Script" path="res://feature/characters/enemies/attack_area.gd" id="3_102l2"]
 [ext_resource type="Script" path="res://feature/characters/enemies/Damageable.gd" id="4_gvll0"]
+[ext_resource type="Script" path="res://feature/characters/enemies/wizard/EnemyHealthBar.gd" id="5_qjvua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oy4iw"]
 radius = 23.0
@@ -32,3 +33,16 @@ shape = SubResource("CircleShape2D_xhnq1")
 
 [node name="Damageable" type="Node" parent="."]
 script = ExtResource("4_gvll0")
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_qjvua")
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBar"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 4.0
+offset_bottom = 72.0

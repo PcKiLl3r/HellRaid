@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b11jv044djh5l"]
 
 [ext_resource type="Texture2D" uid="uid://cfkj7nmiegplq" path="res://assets/objects/Iron.svg" id="1_k0sbd"]
-[ext_resource type="Script" path="res://feature/resources/IsNearResource.gd" id="2_avebv"]
+[ext_resource type="Script" path="res://feature/resources/gather_resource.gd" id="2_padqo"]
 
 [node name="IronStaticBody2D" type="StaticBody2D"]
 scale = Vector2(0.4, 0.4)
@@ -13,7 +13,7 @@ texture = ExtResource("1_k0sbd")
 polygon = PackedVector2Array(29, -46, 34, -50, 100, -33, 117, 33, 70, 81, 10, 65, 4, 74, -80, 67, -117, -10, -68, -80, 17, -73)
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_avebv")
+script = ExtResource("2_padqo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 scale = Vector2(1.25, 1.25)
