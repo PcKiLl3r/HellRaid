@@ -22,7 +22,7 @@ signal coinsChanged
 @onready var iron_hit = $IronHit
 
 var initial_rotation = 0
-var tween = Tween.new()
+
 var is_ready: bool = true
 
 # Dictionary to store the player's resources
@@ -72,8 +72,8 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func play_attack_animation():
-	tween.kill()
-	tween = create_tween()
+	#tween.kill()
+	var tween = create_tween()
 	
 	rotation_degrees = initial_rotation
 	attack_sound.play()
