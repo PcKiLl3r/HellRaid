@@ -46,7 +46,7 @@ func play_attack_animation():
 func reset_rotation():
 	rotation_degrees = initial_rotation
 	
-func hurtByEnemy(area):
+func hurtByEnemy(_area):
 	current_health -= 20
 	print("Health changed")
 	if current_health <= 0:

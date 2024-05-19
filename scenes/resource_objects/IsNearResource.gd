@@ -8,8 +8,10 @@ enum ResourceType {IRON, STONE, WOOD}
 
 func _ready():
 	var area = self
-	area.connect("body_entered", _on_body_entered)
-	area.connect("body_exited", _on_body_exited)
+	if not area.is_connected("body_entered", _on_body_entered):
+		area.connect("body_entered", _on_body_entered)
+	if not area.is_connected("body_exited", _on_body_exited):
+		area.connect("body_exited", _on_body_exited)
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
