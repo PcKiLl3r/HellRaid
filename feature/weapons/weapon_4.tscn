@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdd0y5mhcxbr"]
+
+[ext_resource type="Script" path="res://feature/weapons/weapon_4.gd" id="1_3jwrt"]
+[ext_resource type="Texture2D" uid="uid://b62g1nahcpb6c" path="res://assets/weapons/Weapon-4.svg" id="1_lmrgj"]
+
+[node name="Weapon4" type="Node2D"]
+script = ExtResource("1_3jwrt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(58, 75)
+rotation = 4.71239
+scale = Vector2(0.6, 0.45)
+texture = ExtResource("1_lmrgj")

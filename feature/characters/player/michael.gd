@@ -8,7 +8,8 @@ signal coinsChanged
 
 @export var move_speed : float = 100
 @export var max_health = 100
-@export var damage = 50
+@export var damage_get = 50
+@export var damage_give = 50
 @export var attack_cooldown: float = 1.0
 @export var knockback_force: float = 1
 
@@ -35,6 +36,9 @@ var resources = {
 var coins: int = 0  # Player's coin count
 
 var store_ui: Control = null
+
+# Currently equipped weapon
+var current_weapon: Node = null
 
 func _ready():
 	store_ui = get_node("/root/GameLevel/UserInterface/StoreUI")  # Adjust the path as needed
@@ -84,8 +88,8 @@ func play_attack_animation():
 func reset_rotation():
 	rotation_degrees = initial_rotation
 	
-func take_damage(damage: int):
-	health -= damage
+func take_damage(damage_get: int):
+	health -= damage_get
 	player_hit.play()
 	if health < 0:
 		health = 0
@@ -101,7 +105,7 @@ func check_attack_area():
 			for child in body.get_children():
 				if child is Damageable:
 					enemy_hit.play()
-					child.hit(damage, direction * knockback_force)
+					child.hit(damage_give, direction * knockback_force)
 		# Check if the body is a resource deposit
 		for child in body.get_children():
 			if child.has_method("gather_resource"):
@@ -136,4 +140,13 @@ func add_coins(amount: int):
 	emit_signal("coinsChanged")
 	print("Added " + str(amount) + " coins. Total: " + str(coins))
 
-
+# Method to load a weapon
+func load_weapon(weapon_scene_path: String):
+	if current_weapon:
+		current_weapon.queue_free()  # Remove current weapon
+	var weapon_scene = load(weapon_scene_path) as PackedScene
+	if weapon_scene:
+		current_weapon = weapon_scene.instantiate()
+		add_child(current_weapon)
+		current_weapon.position = Vector2(0, 0)  # Adjust as needed
+		print("Loaded weapon: " + weapon_scene_path)

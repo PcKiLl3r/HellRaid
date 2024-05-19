@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccog5dftx0tg4"]
+[gd_scene load_steps=6 format=3 uid="uid://ccog5dftx0tg4"]
 
 [ext_resource type="Script" path="res://feature/upgrades/Store.gd" id="1_0p72l"]
+[ext_resource type="Texture2D" uid="uid://b6vkw0nf1v0d" path="res://assets/weapons/Weapon-1.svg" id="2_7yum6"]
+[ext_resource type="Texture2D" uid="uid://bp5fnwr41j65i" path="res://assets/weapons/Weapon-2.svg" id="3_l1gne"]
+[ext_resource type="Texture2D" uid="uid://ba5bb5v1jwukx" path="res://assets/weapons/Weapon-3.svg" id="4_2kp5o"]
+[ext_resource type="Texture2D" uid="uid://b62g1nahcpb6c" path="res://assets/weapons/Weapon-4.svg" id="5_i52p7"]
 
 [node name="StoreUI" type="Control"]
 layout_mode = 3
@@ -11,8 +15,8 @@ script = ExtResource("1_0p72l")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_right = 851.0
+offset_bottom = 420.0
 
 [node name="CoinLabel" type="Label" parent="Panel"]
 layout_mode = 0
@@ -22,14 +26,53 @@ text = "Coins: 0"
 
 [node name="SpeedUpgradeButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_top = 40.0
-offset_right = 204.0
-offset_bottom = 71.0
+offset_left = 563.0
+offset_top = 64.0
+offset_right = 794.0
+offset_bottom = 95.0
 text = "+ 1 Speed Upgrade - 10 Coins"
 
 [node name="HealthUpgradeButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_top = 80.0
-offset_right = 208.0
-offset_bottom = 111.0
+offset_left = 568.0
+offset_top = 133.0
+offset_right = 799.0
+offset_bottom = 164.0
 text = "+1 Health Upgrade - 10 Coins"
+
+[node name="Weapon1Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 75.0
+offset_right = 110.0
+offset_bottom = 155.0
+icon = ExtResource("2_7yum6")
+expand_icon = true
+
+[node name="Weapon2Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 76.0
+offset_right = 208.0
+offset_bottom = 156.0
+icon = ExtResource("3_l1gne")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Weapon3Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 76.0
+offset_right = 304.0
+offset_bottom = 156.0
+icon = ExtResource("4_2kp5o")
+expand_icon = true
+
+[node name="Weapon4Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 75.0
+offset_right = 401.0
+offset_bottom = 155.0
+icon = ExtResource("5_i52p7")
+expand_icon = true

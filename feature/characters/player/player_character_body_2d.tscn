@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://vb6lxvealpgj"]
+[gd_scene load_steps=12 format=3 uid="uid://vb6lxvealpgj"]
 
 [ext_resource type="Script" path="res://feature/characters/player/michael.gd" id="1_dbhc3"]
 [ext_resource type="Texture2D" uid="uid://c1xqrlnsuidkc" path="res://assets/characters/PlayerSprite.svg" id="1_l5qk1"]
-[ext_resource type="Texture2D" uid="uid://b62g1nahcpb6c" path="res://assets/weapons/Weapon-4.svg" id="3_cqnm3"]
 [ext_resource type="AudioStream" uid="uid://begq5645pc7q4" path="res://assets/sounds/weapon_swing.mp3" id="4_v2bm5"]
 [ext_resource type="AudioStream" uid="uid://cjsyiwwr5akjx" path="res://assets/sounds/enemy_hit.mp3" id="5_2mc00"]
 [ext_resource type="AudioStream" uid="uid://c156v8mms6sdy" path="res://assets/sounds/player_hit.mp3" id="6_i1t2a"]
@@ -42,12 +41,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sn5j0")
-
-[node name="OnHand" type="Sprite2D" parent="."]
-position = Vector2(58, 76)
-rotation = 4.71239
-scale = Vector2(0.600437, 0.474413)
-texture = ExtResource("3_cqnm3")
 
 [node name="AttackArea" type="Area2D" parent="."]
 script = SubResource("GDScript_wl8xr")
