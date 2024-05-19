@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://vb6lxvealpgj"]
+[gd_scene load_steps=13 format=3 uid="uid://vb6lxvealpgj"]
 
 [ext_resource type="Script" path="res://feature/characters/player/michael.gd" id="1_dbhc3"]
 [ext_resource type="Texture2D" uid="uid://c1xqrlnsuidkc" path="res://assets/characters/PlayerSprite.svg" id="1_l5qk1"]
 [ext_resource type="Texture2D" uid="uid://b62g1nahcpb6c" path="res://assets/weapons/Weapon-4.svg" id="3_cqnm3"]
+[ext_resource type="AudioStream" uid="uid://begq5645pc7q4" path="res://assets/sounds/weapon_swing.mp3" id="4_v2bm5"]
+[ext_resource type="AudioStream" uid="uid://cjsyiwwr5akjx" path="res://assets/sounds/enemy_hit.mp3" id="5_2mc00"]
+[ext_resource type="AudioStream" uid="uid://c156v8mms6sdy" path="res://assets/sounds/player_hit.mp3" id="6_i1t2a"]
+[ext_resource type="AudioStream" uid="uid://cttxkfjxnuomm" path="res://assets/sounds/wood_hit.mp3" id="7_egnv8"]
+[ext_resource type="AudioStream" uid="uid://daoqh0lw8xtud" path="res://assets/sounds/stone_hit.mp3" id="8_7tu8t"]
+[ext_resource type="AudioStream" uid="uid://ndevjhi4eq83" path="res://assets/sounds/iron_hit.mp3" id="9_8task"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sn5j0"]
 radius = 53.0
@@ -53,5 +59,29 @@ shape = SubResource("RectangleShape2D_qgf04")
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v2bm5")
+volume_db = -20.652
+
+[node name="EnemyHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2mc00")
+volume_db = -22.128
+
+[node name="PlayerHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_i1t2a")
+volume_db = -20.652
+
+[node name="WoodHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_egnv8")
+volume_db = 7.035
+
+[node name="StoneHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_7tu8t")
+volume_db = -16.227
+
+[node name="IronHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8task")
+volume_db = -33.929
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

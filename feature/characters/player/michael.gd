@@ -12,6 +12,12 @@ signal coinsChanged
 @export var attack_cooldown: float = 1.0
 @onready var current_health: int = max_health
 @onready var attack_area: Area2D = $AttackArea
+@onready var attack_sound = $AttackSound
+@onready var enemy_hit = $EnemyHit
+@onready var player_hit = $PlayerHit
+@onready var wood_hit = $WoodHit
+@onready var stone_hit = $StoneHit
+@onready var iron_hit = $IronHit
 
 var initial_rotation = 0
 var tween = Tween.new()
@@ -68,6 +74,7 @@ func play_attack_animation():
 	tween = create_tween()
 	
 	rotation_degrees = initial_rotation
+	attack_sound.play()
 	
 	tween.tween_property(self, "rotation_degrees", initial_rotation - 80, 0.1)
 	tween.tween_property(self, "rotation_degrees", initial_rotation, 0.25)
@@ -77,10 +84,10 @@ func reset_rotation():
 	
 func hurtByEnemy(_area):
 	current_health -= 20
+	player_hit.play()
 	print("Health changed")
 	if current_health <= 0:
 		current_health = 0  # Keep health at zero instead of resetting it to max_health
-		# Consider adding a death or reset function here if needed
 	healthChanged.emit()
 	die()
 	
@@ -91,6 +98,7 @@ func check_attack_area():
 			for child in body.get_children():
 				if child is Damageable:
 					#print("Hit for: " + damage)
+					enemy_hit.play()
 					child.hit(damage)
 		# Check if the body is a resource deposit
 		for child in body.get_children():
@@ -100,7 +108,6 @@ func check_attack_area():
 
 func die():
 	if current_health <= 0:
-		print("Calling end game")
 		get_tree().change_scene_to_file("res://feature/UI/overlays/game_over.tscn")
 
 
@@ -114,9 +121,18 @@ func add_resource(resource_type: String, amount: int):
 		resources[resource_type] += amount
 		resourcesChanged.emit()
 		print("Added " + str(amount) + " " + resource_type)
+<<<<<<< HEAD
 
 # Method to add coins
 func add_coins(amount: int):
 	coins += amount
 	coinsChanged.emit()
 	print("Added " + str(amount) + " coins. Total: " + str(coins))
+=======
+		if resource_type == "wood":
+			wood_hit.play()
+		elif resource_type == "stone":
+			stone_hit.play()
+		elif resource_type == "iron":
+			iron_hit.play()
+>>>>>>> sounds
