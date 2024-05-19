@@ -7,15 +7,18 @@ class_name Damageable
 
 signal health_changed(current_health)
 signal died
+signal knocked_back(direction)
 
 func _ready():
 	health = max_health
 	emit_signal("health_changed", health)
 	print("Damageable ready: health initialized to ", health)
 
-func hit(damage: int):
+func hit(damage: int, knockback_direction: Vector2):
 	health -= damage
 	print("Damageable hit: health reduced to ", health)
+	if knockback_direction != Vector2.ZERO:
+		emit_signal("knocked_back", knockback_direction)
 	if health < 0:
 		health = 0
 	emit_signal("health_changed", health)

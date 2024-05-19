@@ -34,7 +34,7 @@ func _on_health_upgrade_button_pressed():
 	if player.coins >= 20:  # Example upgrade cost
 		player.coins -= 20
 		player.max_health += 50  # Example upgrade
-		player.current_health += 50  # Increase current health as well
+		player.health += 50  # Increase current health as well
 		player.coinsChanged.emit()
 		print("Health upgrade purchased!")
 	else:

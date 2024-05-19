@@ -10,6 +10,8 @@ signal coinsChanged
 @export var max_health = 100
 @export var damage = 50
 @export var attack_cooldown: float = 1.0
+@export var knockback_force: float = 1
+
 @onready var health: int = max_health
 @onready var attack_area: Area2D = $AttackArea
 @onready var attack_sound = $AttackSound
@@ -95,10 +97,11 @@ func check_attack_area():
 	var overlapping_bodies = attack_area.get_overlapping_bodies()
 	for body in overlapping_bodies:
 		if body is CharacterBody2D:
+			var direction = (body.global_position - global_position).normalized()
 			for child in body.get_children():
 				if child is Damageable:
 					enemy_hit.play()
-					child.hit(damage)
+					child.hit(damage, direction * knockback_force)
 		# Check if the body is a resource deposit
 		for child in body.get_children():
 			if child.has_method("gather_resource"):

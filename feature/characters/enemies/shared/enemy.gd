@@ -5,11 +5,14 @@ class_name Enemy
 @export var attack_damage = 10
 @export var attack_speed = 1.0  # Attacks per second
 @export var attack_range = 100  # Range within which the enemy can attack the player
+@export var knockback_strength = 300
 
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var attack_timer = Timer.new()
 @onready var damageable = $Damageable
 @onready var attack_area = $AttackArea  # Adjust the path as needed
+
+var knockback_velocity = Vector2.ZERO
 
 func _ready():
 	add_child(attack_timer)
@@ -19,6 +22,7 @@ func _ready():
 	# Connect to the died signal of the Damageable component
 	if damageable:
 		damageable.connect("died", _on_died)
+		damageable.connect("knocked_back", Callable(self, "_on_knocked_back"))
 		print("Enemy connected to Damageable died signal")
 
 	# Pass the enemy's damage to the attack area
@@ -27,8 +31,12 @@ func _ready():
 
 func _physics_process(delta):
 	if player and damageable and damageable.health > 0:
-		var direction = global_position.direction_to(player.global_position)
-		velocity = direction * movement_speed
+		if knockback_velocity != Vector2.ZERO:
+			velocity = knockback_velocity
+			knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, knockback_strength * delta)
+		else:
+			var direction = global_position.direction_to(player.global_position)
+			velocity = direction * movement_speed
 		move_and_slide()
 		look_at(player.global_position)
 		rotation += PI / 2
@@ -44,6 +52,10 @@ func attack():
 	if player.has_method("take_damage"):
 		print("Enemy attacking player")
 		player.take_damage(attack_damage)
+
+func _on_knocked_back(direction):
+	print("knocking back in enemy")
+	knockback_velocity = direction * knockback_strength
 
 func _on_died():
 	# Stop the enemy from attacking after it dies
