@@ -84,7 +84,7 @@ func reset_rotation():
 	
 func take_damage(damage: int):
 	health -= damage
-	print("Player took damage: health reduced to ", health)
+	player_hit.play()
 	if health < 0:
 		health = 0
 	emit_signal("healthChanged")
