@@ -24,10 +24,10 @@ texture = ExtResource("2_quu25")
 position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_oy4iw")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="."]
 script = ExtResource("3_2wh4y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_xhnq1")
 

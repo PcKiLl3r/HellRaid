@@ -23,10 +23,10 @@ offset = Vector2(3, -20)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iksrm")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="."]
 script = ExtResource("3_mljyk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_b2rei")
 
 [node name="Damageable" type="Node" parent="."]
@@ -34,4 +34,4 @@ script = ExtResource("4_wx8mb")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_le54j")]
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]
