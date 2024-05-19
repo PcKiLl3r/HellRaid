@@ -9,7 +9,7 @@ func _ready():
 
 func _on_retry_pressed():
 	Globals.time_survived = 0
-	get_tree().change_scene_to_file("res://scenes/game_level.tscn")
+	get_tree().change_scene_to_file("res://feature/level/game_level.tscn")
 
 
 func _on_quit_pressed():

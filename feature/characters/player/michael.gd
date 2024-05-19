@@ -80,7 +80,8 @@ func check_attack_area():
 
 func die():
 	if current_health <= 0:
-		get_tree().change_scene_to_file("res://utility/game_over.tscn")
+		print("Calling end game")
+		get_tree().change_scene_to_file("res://feature/UI/overlays/game_over.tscn")
 
 
 func _on_cooldown_timer_timeout():
