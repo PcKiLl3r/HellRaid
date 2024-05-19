@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8bucrlk65i1d"]
+[gd_scene load_steps=10 format=3 uid="uid://b8bucrlk65i1d"]
 
 [ext_resource type="Script" path="res://feature/level/enemy_spawner.gd" id="1_wmeqt"]
 [ext_resource type="PackedScene" uid="uid://csfoc8ed4las8" path="res://feature/characters/enemies/wizard/wizard_enemy.tscn" id="2_f1py3"]
 [ext_resource type="Script" path="res://feature/level/spawn_info.gd" id="3_fm0j6"]
+[ext_resource type="PackedScene" uid="uid://c5b68t6kpae0p" path="res://feature/characters/enemies/stone_man/enemy_stone_character_body_2d.tscn" id="4_dmff5"]
 
 [sub_resource type="Resource" id="Resource_e3cdr"]
 script = ExtResource("3_fm0j6")
@@ -36,9 +37,17 @@ enemy = ExtResource("2_f1py3")
 enemy_num = 30
 enemy_spawn_delay = 5
 
+[sub_resource type="Resource" id="Resource_4um71"]
+script = ExtResource("3_fm0j6")
+time_start = 10
+time_end = 50
+enemy = ExtResource("4_dmff5")
+enemy_num = 1
+enemy_spawn_delay = 10
+
 [node name="EnemySpawner" type="Node2D"]
 script = ExtResource("1_wmeqt")
-spawns = Array[ExtResource("3_fm0j6")]([SubResource("Resource_e3cdr"), SubResource("Resource_1rk6n"), SubResource("Resource_q68r5"), SubResource("Resource_0u80u")])
+spawns = Array[ExtResource("3_fm0j6")]([SubResource("Resource_e3cdr"), SubResource("Resource_1rk6n"), SubResource("Resource_q68r5"), SubResource("Resource_0u80u"), SubResource("Resource_4um71")])
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

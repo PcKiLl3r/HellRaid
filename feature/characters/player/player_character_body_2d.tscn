@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://vb6lxvealpgj"]
 
 [ext_resource type="Script" path="res://feature/characters/player/michael.gd" id="1_dbhc3"]
-[ext_resource type="Texture2D" uid="uid://c1xqrlnsuidkc" path="res://assets/characters/PlayerSprite.svg" id="1_l5qk1"]
+[ext_resource type="Texture2D" uid="uid://dbal73dwm18vr" path="res://assets/characters/Player.svg" id="2_p5mbc"]
 [ext_resource type="AudioStream" uid="uid://begq5645pc7q4" path="res://assets/sounds/weapon_swing.mp3" id="4_v2bm5"]
 [ext_resource type="AudioStream" uid="uid://cjsyiwwr5akjx" path="res://assets/sounds/enemy_hit.mp3" id="5_2mc00"]
 [ext_resource type="AudioStream" uid="uid://c156v8mms6sdy" path="res://assets/sounds/player_hit.mp3" id="6_i1t2a"]
@@ -35,7 +35,7 @@ script = ExtResource("1_dbhc3")
 position = Vector2(1, 0)
 rotation = -6.28319
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_l5qk1")
+texture = ExtResource("2_p5mbc")
 offset = Vector2(14, 0)
 flip_h = true
 
