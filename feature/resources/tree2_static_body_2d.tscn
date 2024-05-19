@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://yw2im1whuipa"]
 
 [ext_resource type="Texture2D" uid="uid://bh1nx1nkg3rpa" path="res://assets/objects/Tree-2.svg" id="1_jdj1t"]
-[ext_resource type="Script" path="res://feature/resources/gather_resource.gd" id="2_5iti0"]
+[ext_resource type="Script" path="res://feature/resources/gatherable.gd" id="2_5iti0"]
 
 [node name="Tree2StaticBody2D" type="StaticBody2D"]
 scale = Vector2(0.4, 0.4)

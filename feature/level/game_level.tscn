@@ -1,10 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://dwd4waph2o2tj"]
+[gd_scene load_steps=16 format=3 uid="uid://dwd4waph2o2tj"]
 
 [ext_resource type="PackedScene" uid="uid://vb6lxvealpgj" path="res://feature/characters/player/player_character_body_2d.tscn" id="1_cvewe"]
-[ext_resource type="PackedScene" uid="uid://b11jv044djh5l" path="res://feature/resources/iron_static_body_2d.tscn" id="2_cysen"]
-[ext_resource type="PackedScene" uid="uid://diu3qsuutmchg" path="res://feature/resources/stone_static_body_2d.tscn" id="3_nuufq"]
-[ext_resource type="PackedScene" uid="uid://cqo58gr6lmi83" path="res://feature/resources/tree1_static_body_2d.tscn" id="4_417xm"]
-[ext_resource type="PackedScene" uid="uid://yw2im1whuipa" path="res://feature/resources/tree2_static_body_2d.tscn" id="5_ppx4q"]
 [ext_resource type="Texture2D" uid="uid://beggkjacijl1b" path="res://assets/floor/Ground-Texture.svg" id="7_1duyn"]
 [ext_resource type="Script" path="res://feature/UI/UserInterface.gd" id="8_n2dp5"]
 [ext_resource type="Script" path="res://feature/UI/HealthBar.gd" id="8_n7j40"]
@@ -13,7 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b8bucrlk65i1d" path="res://feature/characters/enemies/enemy_spawner.tscn" id="10_k5jke"]
 [ext_resource type="Texture2D" uid="uid://dure1d3vvjbco" path="res://assets/resources/Stone-Resource.svg" id="10_mwuab"]
 [ext_resource type="Texture2D" uid="uid://byvbqp0detdov" path="res://assets/resources/Wood-Resource.svg" id="11_nnn0k"]
-[ext_resource type="PackedScene" path="res://feature/UI/store_ui.tscn" id="13_vev53"]
+[ext_resource type="PackedScene" uid="uid://ccog5dftx0tg4" path="res://feature/UI/store_ui.tscn" id="13_vev53"]
+[ext_resource type="PackedScene" uid="uid://cloku8bnrf500" path="res://feature/level/resource_spawner.tscn" id="15_y7px4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13hjo"]
 texture = ExtResource("7_1duyn")
@@ -208,31 +205,18 @@ bg_color = Color(0.890316, 0, 0.303192, 1)
 [node name="GameLevel" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_cvewe")]
-position = Vector2(220, 132)
 rotation = -6.28319
 move_speed = 250.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="IronStaticBody2D" parent="." instance=ExtResource("2_cysen")]
-position = Vector2(619, 166)
-
-[node name="IronStaticBody2D2" parent="." instance=ExtResource("3_nuufq")]
-position = Vector2(449, 374)
-
-[node name="Tree1StaticBody2D" parent="." instance=ExtResource("4_417xm")]
-position = Vector2(113, 393)
-
-[node name="Tree2StaticBody2D" parent="." instance=ExtResource("5_ppx4q")]
-position = Vector2(287, 497)
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(220, 132)
 scale = Vector2(0.5, 0.5)
 position_smoothing_speed = 10.0
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-530, 75)
 tile_set = SubResource("TileSet_6o1t7")
 format = 2
 layer_0/name = "Ground"
@@ -330,3 +314,9 @@ offset_left = 120.0
 offset_right = 160.0
 
 [node name="EnemySpawner" parent="." instance=ExtResource("10_k5jke")]
+
+[node name="ResourceSpawner" parent="." instance=ExtResource("15_y7px4")]
+grid_size = Vector2(75, 75)
+spawn_area_size = Vector2(8500, 5300)
+min_variation = Vector2(3, 3)
+max_variation = Vector2(10, 10)

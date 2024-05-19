@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=3 uid="uid://cloku8bnrf500"]
+
+[ext_resource type="Script" path="res://feature/level/resource_spawner.gd" id="1_fouv6"]
+[ext_resource type="PackedScene" uid="uid://b11jv044djh5l" path="res://feature/resources/iron_static_body_2d.tscn" id="2_0gtg0"]
+[ext_resource type="PackedScene" uid="uid://diu3qsuutmchg" path="res://feature/resources/stone_static_body_2d.tscn" id="3_ydm63"]
+[ext_resource type="PackedScene" uid="uid://cqo58gr6lmi83" path="res://feature/resources/tree1_static_body_2d.tscn" id="4_f3tci"]
+[ext_resource type="PackedScene" uid="uid://yw2im1whuipa" path="res://feature/resources/tree2_static_body_2d.tscn" id="5_fkcnm"]
+
+[node name="ResourceSpawner" type="Node2D"]
+script = ExtResource("1_fouv6")
+iron_resource_scene = ExtResource("2_0gtg0")
+stone_resource_scene = ExtResource("3_ydm63")
+wood_resource_scenes = Array[PackedScene]([ExtResource("4_f3tci"), ExtResource("5_fkcnm")])
+spawn_area_size = Vector2(9000, 5300)
+min_variation = Vector2(10, 10)
+max_variation = Vector2(25, 25)
