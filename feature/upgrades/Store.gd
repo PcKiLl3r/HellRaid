@@ -12,10 +12,11 @@ func _ready():
 
 	# Connect button signals
 	speed_upgrade_button.connect("pressed", _on_speed_upgrade_button_pressed)
-	health_upgrade_button.connect("pressed",_on_health_upgrade_button_pressed)
+	health_upgrade_button.connect("pressed", _on_health_upgrade_button_pressed)
 
 func _on_coins_changed():
 	var player = get_node("/root/GameLevel/Player")  # Adjust the path as needed
+	print("Updating coin label to " + str(player.coins))
 	coin_label.text = "Coins: " + str(player.coins)
 
 func _on_speed_upgrade_button_pressed():

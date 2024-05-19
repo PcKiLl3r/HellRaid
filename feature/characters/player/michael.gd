@@ -26,6 +26,24 @@ var resources = {
 
 var coins: int = 0  # Player's coin count
 
+var store_ui: Control = null
+
+func _ready():
+	store_ui = get_node("/root/GameLevel/UserInterface/StoreUI")  # Adjust the path as needed
+	if store_ui:
+		store_ui.visible = false  # Initially hidden
+		print("StoreUI found!")
+	else:
+		print("StoreUI not found!")
+
+func _input(event):
+	if event.is_action_pressed("toggle_store"):  # Define 'toggle_store' action in Input Map
+		if store_ui:
+			store_ui.visible = !store_ui.visible
+			print("Toggled StoreUI visibility to ", store_ui.visible)
+		else:
+			print("StoreUI not found in _input()")
+
 func _physics_process(_delta):
 	look_at(get_global_mouse_position())
 	
