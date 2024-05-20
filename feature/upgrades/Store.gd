@@ -55,7 +55,7 @@ func _on_weapon1_button_pressed():
 		player.coins -= 10
 		player.damage_give = 25
 		player.knockback_force = 1.25
-		player.load_weapon("res://feature/weapons/Weapon_1.tscn")
+		player.load_weapon("res://feature/weapons/weapon_1.tscn")
 		print("Weapon 1 equiped")
 	else:
 		print("Not enough coins!")
@@ -66,7 +66,7 @@ func _on_weapon2_button_pressed():
 		player.coins -= 10
 		player.damage_give = 50
 		player.knockback_force = 0.5
-		player.load_weapon("res://feature/weapons/Weapon_2.tscn")
+		player.load_weapon("res://feature/weapons/weapon_2.tscn")
 		print("Weapon 1 equiped")
 	else:
 		print("Not enough coins!")
@@ -77,7 +77,7 @@ func _on_weapon3_button_pressed():
 		player.coins -= 50
 		player.damage_give = 100
 		player.knockback_force = 1
-		player.load_weapon("res://feature/weapons/Weapon_3.tscn")
+		player.load_weapon("res://feature/weapons/weapon_3.tscn")
 		print("Weapon 1 equiped")
 	else:
 		print("Not enough coins!")
@@ -88,7 +88,7 @@ func _on_weapon4_button_pressed():
 		player.coins -= 50
 		player.damage_give = 100
 		player.knockback_force = 1
-		player.load_weapon("res://feature/weapons/Weapon_4.tscn")
+		player.load_weapon("res://feature/weapons/weapon_4.tscn")
 		print("Weapon 1 equiped")
 	else:
 		print("Not enough coins!")
