@@ -150,3 +150,15 @@ func load_weapon(weapon_scene_path: String):
 		add_child(current_weapon)
 		current_weapon.position = Vector2(0, 0)  # Adjust as needed
 		print("Loaded weapon: " + weapon_scene_path)
+
+
+func has_sufficient_resources(cost: Dictionary) -> bool:
+	for resource in cost.keys():
+		if resources[resource] < cost[resource]:
+			return false
+	return true
+
+func update_resources(cost: Dictionary):
+	for resource in cost.keys():
+		resources[resource] -= cost[resource]
+	emit_signal("resourcesChanged")

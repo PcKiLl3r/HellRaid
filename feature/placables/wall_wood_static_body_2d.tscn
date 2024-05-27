@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c44k11pmimn2e"]
+
+[ext_resource type="Texture2D" uid="uid://ccxddwtofgpa3" path="res://assets/objects/Wall-Wood.svg" id="1_jppex"]
+[ext_resource type="Script" path="res://feature/placables/Area2D.gd" id="2_0a2hj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iukxu"]
+size = Vector2(122, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqp5o"]
+size = Vector2(140, 40)
+
+[node name="WallWoodStaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.493827, 0.493827)
+texture = ExtResource("1_jppex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_iukxu")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_0a2hj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_rqp5o")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
