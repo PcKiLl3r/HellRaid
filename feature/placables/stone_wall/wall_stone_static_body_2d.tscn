@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbg2eocfhrlcf"]
+
+[ext_resource type="Texture2D" uid="uid://c8ias8kxim6w3" path="res://assets/objects/Wall-Stone.svg" id="1_dyk0r"]
+[ext_resource type="Script" path="res://feature/placables/stone_wall/stone_wall_hp.gd" id="2_yr8j5"]
+
+[sub_resource type="GDScript" id="GDScript_nvu76"]
+script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbepe"]
+size = Vector2(122, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh5uc"]
+size = Vector2(140, 40)
+
+[node name="WallStoneStaticBody2D" type="StaticBody2D" groups=["walls"]]
+script = SubResource("GDScript_nvu76")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.493827, 0.493827)
+texture = ExtResource("1_dyk0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_lbepe")
+
+[node name="Area2D" type="Area2D" parent="." groups=["walls"]]
+script = ExtResource("2_yr8j5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_sh5uc")
+
+[node name="Label" type="Label" parent="Area2D"]
+offset_left = 12.0
+offset_top = -20.0
+offset_right = 52.0
+offset_bottom = 3.0
+rotation = 1.5708
+
+[node name="Timer" type="Timer" parent="Area2D"]
+wait_time = 0.5

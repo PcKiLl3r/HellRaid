@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjlm2aith7p31"]
 
 [ext_resource type="Script" path="res://feature/level/placable_object.gd" id="1_i8dlt"]
-[ext_resource type="PackedScene" uid="uid://c44k11pmimn2e" path="res://feature/placables/wall_wood_static_body_2d.tscn" id="2_tuj3q"]
-[ext_resource type="PackedScene" uid="uid://dbg2eocfhrlcf" path="res://feature/placables/wall_stone_static_body_2d.tscn" id="3_53bv3"]
+[ext_resource type="PackedScene" uid="uid://c44k11pmimn2e" path="res://feature/placables/wood_wall/wall_wood_static_body_2d.tscn" id="2_4smca"]
+[ext_resource type="PackedScene" uid="uid://dbg2eocfhrlcf" path="res://feature/placables/stone_wall/wall_stone_static_body_2d.tscn" id="3_5fkqf"]
 
 [node name="PlacableObject" type="Node2D"]
 script = ExtResource("1_i8dlt")
-WallScene = ExtResource("2_tuj3q")
-TrapScene = ExtResource("3_53bv3")
-TurretScene = ExtResource("3_53bv3")
+WoodWallScene = ExtResource("2_4smca")
+StoneWallScene = ExtResource("3_5fkqf")
+TrapScene = ExtResource("3_5fkqf")
+TurretScene = ExtResource("3_5fkqf")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

@@ -35,3 +35,6 @@ shape = SubResource("CircleShape2D_xhnq1")
 script = ExtResource("4_txppq")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_am8al")]
+
+[connection signal="area_entered" from="AttackArea" to="AttackArea" method="_on_area_entered"]
+[connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]
