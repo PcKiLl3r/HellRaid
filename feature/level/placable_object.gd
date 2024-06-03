@@ -28,8 +28,8 @@ func _process(delta):
 		select_object(ObjectType.WOOD_WALL)
 	elif Input.is_action_just_pressed("select_stone_wall"):
 		select_object(ObjectType.STONE_WALL)
-	elif Input.is_action_just_pressed("select_trap"):
-		select_object(ObjectType.TRAP)
+	#elif Input.is_action_just_pressed("select_trap"):
+	#	select_object(ObjectType.TRAP)
 	elif Input.is_action_just_pressed("select_turret"):
 		select_object(ObjectType.TURRET)
 	elif Input.is_action_just_pressed("cancel_selection"):

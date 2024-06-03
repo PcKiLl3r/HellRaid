@@ -8,7 +8,8 @@ func _ready():
 		connect("body_entered", Callable(self, "_on_body_entered"))
 		
 	# Connect the body_entered signal to a method using a callable
-	connect("area_entered", Callable(self, "_on_area_entered"))
+	if not is_connected("area_entered", Callable(self, "_on_area_entered")):
+		connect("area_entered", Callable(self, "_on_area_entered"))
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
