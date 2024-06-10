@@ -63,8 +63,8 @@ func _on_weapon1_button_pressed():
 
 func _on_weapon2_button_pressed():
 	var player = get_node("/root/GameLevel/Player")  # Adjust the path as needed
-	if player.coins >= 40:  # Example upgrade cost
-		player.coins -= 40
+	if player.coins >= 50:  # Example upgrade cost
+		player.coins -= 50
 		player.damage_give = 50
 		player.knockback_force = 0.75
 		player.load_weapon("res://feature/weapons/weapon_2.tscn")
@@ -75,8 +75,8 @@ func _on_weapon2_button_pressed():
 
 func _on_weapon3_button_pressed():
 	var player = get_node("/root/GameLevel/Player")  # Adjust the path as needed
-	if player.coins >= 50:  # Example upgrade cost
-		player.coins -= 50
+	if player.coins >= 100:  # Example upgrade cost
+		player.coins -= 100
 		player.damage_give = 100
 		player.attack_cooldown = 1.2
 		player.knockback_force = 1
@@ -88,8 +88,8 @@ func _on_weapon3_button_pressed():
 
 func _on_weapon4_button_pressed():
 	var player = get_node("/root/GameLevel/Player")  # Adjust the path as needed
-	if player.coins >= 50:  # Example upgrade cost
-		player.coins -= 50
+	if player.coins >= 100:  # Example upgrade cost
+		player.coins -= 100
 		player.damage_give = 75
 		player.attack_cooldown = 0.4
 		player.knockback_force = 0.75
