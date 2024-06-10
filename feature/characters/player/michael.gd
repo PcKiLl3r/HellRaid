@@ -9,9 +9,9 @@ signal coinsChanged
 @export var move_speed : float = 100
 @export var max_health = 100
 @export var damage_get = 50
-@export var damage_give = 50
-@export var attack_cooldown: float = 1.0
-@export var knockback_force: float = 1
+@export var damage_give = 25
+@export var attack_cooldown: float = 1.5
+@export var knockback_force: float = 0.6
 
 @onready var health: int = max_health
 @onready var attack_area: Area2D = $AttackArea

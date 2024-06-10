@@ -51,10 +51,10 @@ func _on_health_upgrade_button_pressed():
 # Functions to load weapons
 func _on_weapon1_button_pressed():
 	var player = get_node("/root/GameLevel/Player")  # Adjust the path as needed
-	if player.coins >= 10:  # Example upgrade cost
-		player.coins -= 10
-		player.damage_give = 25
-		player.knockback_force = 1.25
+	if player.coins >= 20:  # Example upgrade cost
+		player.coins -= 20
+		player.damage_give = 34
+		player.knockback_force = 1.30
 		player.load_weapon("res://feature/weapons/weapon_1.tscn")
 		player.coinsChanged.emit()
 		print("Weapon 1 equiped")
@@ -63,10 +63,10 @@ func _on_weapon1_button_pressed():
 
 func _on_weapon2_button_pressed():
 	var player = get_node("/root/GameLevel/Player")  # Adjust the path as needed
-	if player.coins >= 10:  # Example upgrade cost
-		player.coins -= 10
+	if player.coins >= 40:  # Example upgrade cost
+		player.coins -= 40
 		player.damage_give = 50
-		player.knockback_force = 0.5
+		player.knockback_force = 0.75
 		player.load_weapon("res://feature/weapons/weapon_2.tscn")
 		player.coinsChanged.emit()
 		print("Weapon 1 equiped")
@@ -78,6 +78,7 @@ func _on_weapon3_button_pressed():
 	if player.coins >= 50:  # Example upgrade cost
 		player.coins -= 50
 		player.damage_give = 100
+		player.attack_cooldown = 1.2
 		player.knockback_force = 1
 		player.load_weapon("res://feature/weapons/weapon_3.tscn")
 		player.coinsChanged.emit()
@@ -89,8 +90,9 @@ func _on_weapon4_button_pressed():
 	var player = get_node("/root/GameLevel/Player")  # Adjust the path as needed
 	if player.coins >= 50:  # Example upgrade cost
 		player.coins -= 50
-		player.damage_give = 100
-		player.knockback_force = 1
+		player.damage_give = 75
+		player.attack_cooldown = 0.4
+		player.knockback_force = 0.75
 		player.load_weapon("res://feature/weapons/weapon_4.tscn")
 		player.coinsChanged.emit()
 		print("Weapon 1 equiped")
